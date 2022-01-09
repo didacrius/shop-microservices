@@ -24,7 +24,7 @@ public static class HostExtensions
             
             logger.LogInformation("Migrated database associated with context {DbContextName}", typeof(TContext).Name);
         }
-        catch (SqlException e)
+        catch
         {
             logger.LogInformation("An error curred while migrating the database used on context {DbContextName}", typeof(TContext).Name);
 
