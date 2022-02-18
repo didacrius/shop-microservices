@@ -1,4 +1,3 @@
-using Basket.API;
 using Basket.API.GrpcServices;
 using Basket.API.Repositories;
 using Basket.API.Repositories.Interfaces;
@@ -16,7 +15,7 @@ builder.Services.AddStackExchangeRedisCache(options =>
 
 // General Configuration
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
-builder.Services.AddAutoMapper(typeof(Startup));
+builder.Services.AddAutoMapper(typeof(Program));
 
 // Grpc Configuration
 builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
@@ -58,3 +57,5 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
+
+app.Run();
